@@ -55,6 +55,7 @@ import {
           lastname: lastname.value,
           email: email.value,
           birthday: birthday.value,
+          user_id: userCredential.user.uid
         })
       );
       return Promise.all(promises);
