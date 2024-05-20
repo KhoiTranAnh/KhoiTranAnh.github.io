@@ -48,8 +48,8 @@ let signUpTeacherAccount = (event) => {
             return Promise.all(promises);
         })
         .then(() => {
-            // window.location.href = "";
-            alert('Tao tai khoan thanh cong')
+            alert('Tạo tài khoản Giảng viên thành công')
+            window.location.reload();
         })
         .catch((error) => {
             alert(error.message);

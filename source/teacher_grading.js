@@ -54,6 +54,8 @@ function calculateOverallGrade(grades) {
   return overall;
 }
 
+console.log(`Courses/${current_course_id}/Classes/${current_course_class}/studentIds`)
+
 function load_grade_table(student_grade_table) {
   get(
     ref(
@@ -103,6 +105,7 @@ function load_grade_table(student_grade_table) {
         // console.log(student[1].grades);
       });
     }
+    else {console.log("BUG")}
   });
 }
 

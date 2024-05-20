@@ -71,10 +71,12 @@ function insertData(e) {
     });
   })
   
-  update(ref(db, `Roles/Teachers/${teacher_name_input.value}/Courses/${course_id_input.value}`), {
-    class: class_input.value
+  update(ref(db, `Roles/Teachers/${teacher_name_input.value}/Courses/${course_id_input.value}/class`), {
+    [class_input.value] : "",
   })
-  // window.location.reload();
+
+  alert("Tạo lớp mới thành công")
+  window.location.reload();
 }
 
 //Lang nghe su kien click o createButton va goi ham de them Data

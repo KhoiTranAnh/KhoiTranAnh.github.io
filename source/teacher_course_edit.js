@@ -70,6 +70,8 @@ async function load_course_content(classContent) {
                 thumbnail.setAttribute("class", "content-thumbnail");
                 contentDiv.appendChild(thumbnail);
 
+                console.log(content[1]);
+
                 let content_name = document.createElement("a");
                 content_name.classList.add("content-title");
                 content_name.id = `${section[0]}-${content[0]}`;
@@ -129,7 +131,7 @@ let createContent = (event) => {
       });
       set(ref(db, `Courses/${currentCourseId}/Classes/${currentCourseClass}/sections/${currentSection}/${newContentIndex}`), {
         link: contentLink,
-        name: contentName,
+        'contentName': contentName,
       })
     }
   })
@@ -153,7 +155,7 @@ let updateContent = (event) => {
   let newContentName = document.getElementById('edit-content-name-input').value;
   if (newContentName != null && newContentName != "") {
     update(ref(db, `Courses/${currentCourseId}/Classes/${currentCourseClass}/sections/${currentEdit.sectionIndex}/${currentEdit.contentIndex}`), {
-      'name': newContentName
+      'contentName': newContentName
     })
   }
   let newContentLink = document.getElementById('edit-content-link-input').value;

@@ -139,12 +139,7 @@ let registerCourse = (event) => {
               },
             },
           })
-            .then(() => {
-              alert("Đăng ký thành công");
-            })
-            .catch((error) => {
-              alert(error.message);
-            });
+          alert('Đăng ký thành công')
         }
         else {
           console.log("BUG");

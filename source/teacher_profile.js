@@ -151,18 +151,21 @@ function load_user_timetable() {
   .then ((snapshot) => {
     Object.entries(snapshot.val()).forEach((course) => {
       let courseID = course[0];
-      Object.entries(course[1]).forEach((courseClass) => {
-        // console.log(courseClass);
-        let courseClassId = courseClass[1];
-        get(ref(db, `Courses/${courseID}`))
-        .then((snapshot) => {
-          let courseName = snapshot.val().name;
-          let courseSchedule = snapshot.val().Classes[courseClassId].schedule
-          // console.log(courseName);
-          // console.log(courseClassId);
-          // console.log(courseID);
-          // console.log(courseSchedule);
-          document.getElementById('time-table').appendChild(createScheduleTableRow(courseID, courseName, courseClassId, courseSchedule));
+      // console.log(course[1]);
+      Object.entries(course[1]).forEach((courseClasses) => {
+        // console.log(courseClasses[1]);
+        Object.entries(courseClasses[1]).forEach((courseClass) => {
+          let courseClassId = courseClass[0];
+          get(ref(db, `Courses/${courseID}`))
+          .then((snapshot) => {
+            let courseName = snapshot.val().name;
+            let courseSchedule = snapshot.val().Classes[courseClassId].schedule
+            // console.log(courseName);
+            // console.log(courseClassId);
+            // console.log(courseID);
+            // console.log(courseSchedule);
+            document.getElementById('time-table').appendChild(createScheduleTableRow(courseID, courseName, courseClassId, courseSchedule));
+          })
         })
       }) 
     })

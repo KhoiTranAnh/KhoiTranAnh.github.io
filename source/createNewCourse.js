@@ -71,7 +71,8 @@ let insertData = (event) => {
     gradeFrame['finalRatio'] = gradeRatio_final.value;
   }
   set(ref(db, `Courses/${course_id_input.value}/GradeFrame`), gradeFrame);
-  // window.location.reload();
+  alert('Tạo môn học mới thành công');
+  window.location.reload();
 }
 
 form.addEventListener('submit', insertData);
