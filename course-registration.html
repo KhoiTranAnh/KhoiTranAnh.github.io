@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+  <link rel="stylesheet" href="./style/course-registration.css">
+</head>
+
+<body>
+  <div class="topnav">
+    <img src="./img/logo-placeholder.svg" alt="" class="logo">
+    <div class="a-container active">
+      <a href="./index.html">Home</a>
+    </div>
+    <div class="a-container dashboard" style="display: none;">
+      <a href="./ad_dboard.html">Dashboard</a>
+    </div>
+    <div class="a-container courses" style="display: none;">
+      <a href="course.html">Courses</a>
+    </div>
+    <div class="a-container course-regis" style="display: none;">
+      <a href="./course-registration.html">Course Registration</a>
+    </div>
+    
+    <div class="a-container login">
+      <a href="./login.html">Login</a>
+    </div>
+
+    <div class="a-container logout" id="logout-div" style="display: none;">
+      <a href="./login.html" id="logout" onclick="logout()">Log out</a>
+    </div>
+  </div>
+
+  <div class="course-student">
+    <div class="content-container">
+      <section class="header-table">
+        <nav class="course-nav">
+          <button href="#" class="course-nav-link active" id="result-btn" onclick="showContent('result')">Registration
+            result</button>
+          <button href="#" class="course-nav-link" id="registration-btn" onclick="showContent('registration')">Course
+            registration</button>
+        </nav>
+      </section>
+
+      <div id="result" class="content result">
+        <p id="statement1"> User name's current enrolled courses </p>
+        <div class="container">
+          <table id="dynamic-table">
+            <thead>
+              <tr>
+                <th class="courseid">Course ID</th>
+                <th class="class">Class</th>
+                <th class="coursename">Course name</th>
+                <th class="schedule">Schedule</th>
+                <th class="room">Room</th>
+              </tr>
+            </thead>
+            <tbody id="student-current-courses">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="registration" class="content registration hide">
+        <input type="text" id="searchInput" placeholder="Enter course ID to search" autocomplete="off">
+        <div class="resultseach" id="course-info">Course Information</div>
+        <table id="courseTable">
+          <thead>
+            <tr>
+              <th class="checkres">Check for registration</th>
+              <th class="cl">Class</th>
+              <th class="sch">Schedule</th>
+              <th class="roo">Room</th>
+              <th class="clcap">Registered/Class Capacity</th>
+            </tr>
+          </thead>
+          <tbody id="courseTableBody">
+          </tbody>
+        </table>
+        <div class="footdiv">
+            <p>Select class:</p>
+            <p id="selected-class"></p>
+            <input type="submit" name="Confirm" value="Confirm" class="custom-submit" id="confirm-btn">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showContent(id) {
+      let content = document.getElementsByClassName('content');
+      for (let i = 0; i < content.length; i++) {
+        if (!content[i].classList.contains('hide')) {
+          content[i].classList.add('hide');
+        }
+      }
+      document.getElementById(id).classList.remove('hide');
+    }
+
+    function checkOnlyOneBox(id) {
+      let checkboxes = document.getElementsByClassName('checkbox');
+      for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+      }
+      let checkbox = document.getElementById(id);
+      checkbox.checked = true;
+
+      let selected_class = document.getElementById('selected-class');
+      selected_class.innerText = id;
+    }
+  </script>
+  <script>
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = "./login.html";
+    }
+  </script>
+  <script src="./source/index.js"></script>
+  <script type="module" src="./source/courseRegistration-View.js"></script>
+  <script type="module" src="./source/courseRegistration-Registration.js"></script>
+</body>
+
+<footer>
+  <div class="footer-container">
+    <div class="project-info">
+      <p>Advanced Programming (CO2039) Assignment</p>
+      <p>Semester 232</p>
+    </div>
+    <div class="contact-info">Contact Information</div>
+  </div>
+</footer>
+
+</html>

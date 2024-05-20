@@ -1,0 +1,280 @@
+.course-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 24px;
+    line-height: 37.41px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+
+.menu-button {
+    background-color: #00116A;
+    height: 50px;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.body-table {
+    left: 270px;
+}
+
+.sectionTitle {
+    margin-top: 30px;
+    font-size: 32px;
+    text-align: left;
+}
+h2 {
+    font-size: 32px;
+}
+
+.divider {
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 3px;
+    background-color: #fff;
+    margin-top: 11px;
+    height: 3px;
+    width: 900px;
+    left: 270px;
+}
+
+.content-item,
+.content-create {
+    border-radius: 5px;
+    background-color: #00116a;
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    gap: 20px;
+    padding: 20px;
+    text-align: left;
+}
+
+.content-create {
+    background-color: #4756A3;
+}
+
+.content-thumbnail {
+    border-radius: 5px;
+    background-color: #8595eb;
+    width: 80px;
+    height: 80px;
+}
+
+.content-thumbnail img {
+    width: 80px;
+}
+
+.content-create button {
+    background-color: #4756a3;
+    border: none;
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+}
+
+.content-create button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.content-title {
+    font-family: Karla, sans-serif;
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: auto 0;
+    font-size: 24px;
+}
+
+.new-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-section .create-section-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.new-section .create-section-btn button {
+    padding: 0;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: underline;
+}
+
+.new-section .create-section-btn button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.create-new-content {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: fit-content;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #00116a;
+    padding: 20px;
+}
+
+.content-name-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input.content-input {
+    width: 75%;
+    height: 30px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #388FE0;
+    color: white;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.label {
+    display: flex;
+    width: 200px;
+    text-align: left;
+    align-items: center;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: left;
+}
+
+.create-new-content div {
+    margin-top: 10px;
+}
+
+.content-input{
+    text-align: left;
+}
+
+.text-input input {
+    display: flex;
+    width: 860px;
+    background-color: #388fe0;
+    border: none;
+    border-radius: 5px;
+    height: 100px;
+    text-align: left;
+    font-size: 16px;
+    color: white;
+} 
+
+.create-new-content button {
+    align-self: center;
+    margin-top: 20px;
+    width: 150px;
+    height: 40  px;
+    background-color: #388fe0;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.create-new-content button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.content-item a {
+    color: white;
+    text-decoration: none;
+}
+.content-item a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#sectionPanel {
+    display: flex;
+    justify-content: space-between;
+}
+
+#section-name-input {
+    background-color: #388fe0;
+    color: white;
+    height: 32px;
+    font-size: 24px;
+    border-style: none;
+    margin-top: 5px;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+#section-name-btn {
+    background-color: #00116a;
+    color: white;
+    height: 32px;
+    font-size: 24px;
+    border-radius: 5px;
+    width: 15%;
+    margin: 0px 10px;
+    align-self: center;
+    border-style: none;
+}
+
+#section-name-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+}
+
+.sectionTitle {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    button {
+        height: 30px;
+        font-size: 18px;
+        background-color: #00116a;
+        color: white;
+        border-style: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
+}
+
+.content-item button {
+    height: 36px;
+    align-self: center;
+    font-size: 18px;
+    background-color: #00116a;
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.content-item button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+

@@ -1,0 +1,253 @@
+.student-table-header {
+    align-self: center;
+    display: flex;
+    margin-top: 80px;
+    gap: 65px;
+    justify-content: center;
+}
+
+
+.student-id-header,
+.first-name-header,
+.last-name-header,
+.grade-header {
+    font-family: Karla, sans-serif;
+}
+
+.table-divider {
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 3px;
+    background-color: #fff;
+    margin-top: 14px;
+    width: 100%;
+    height: 3px;
+}
+
+
+.student-row {
+    display: flex;
+    margin-top: 11px;
+    max-width: 100%;
+    align-items: center;
+    gap: 20px;
+    padding-left: 160px;
+}
+
+
+.student-id {
+    font-family: Karla, sans-serif;
+    text-decoration-line: underline;
+    align-self: stretch;
+    flex-basis: auto;
+    margin: auto 0;
+    padding-right: 50px;
+}
+
+.Id-selcet{
+    color: #fff;
+}
+.Id-selcet:hover {
+    color: blueviolet;
+}
+
+.first-name {
+    display: flex;
+    flex-wrap: wrap;
+    width: 130px;
+    font-family: Karla, sans-serif;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.last-name {
+    display: flex;
+    flex-wrap: wrap;
+    width: 130px;
+    font-family: Karla, sans-serif;
+    justify-content: center;
+    padding-right: 50px;
+}
+
+.student-grade {
+    font-family: Karla, sans-serif;
+    align-self: stretch;
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: auto 0;
+}
+/*----------------------grade content-------------------*/
+.grade-content {
+    display: none;
+}
+
+.student-info {
+    align-self: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.student-Id,
+.student-Name,
+.label {
+    font-family: Karla, sans-serif;
+}
+
+.grade-table-header {
+    align-self: center;
+    display: flex;
+    margin-top: 20px;
+    gap: 65px;
+    justify-content: center;
+}
+
+
+.grade-item-header,
+.calculated-weight-header,
+.grade-header,
+.range-header,
+.percentage-header {
+    font-family: Karla, sans-serif;
+}
+
+.table-divider {
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 3px;
+    background-color: #fff;
+    margin-top: 14px;
+    width: 100%;
+    height: 3px;
+}
+
+
+.grade-row {
+    display: flex;
+    margin-top: 11px;
+    max-width: 100%;
+    align-items: center;
+    gap: 20px;
+    padding-left: 0px;
+}
+
+.calculated-weight,
+.grade,
+.range,
+.percentage {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    font-family: Karla, sans-serif;
+    justify-content: center;
+}
+
+.grade-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 130px;
+    font-family: Karla, sans-serif;
+    justify-content: center;
+    padding-left: 65px;
+    padding-right: 90px;
+}
+
+.calculated-weight {
+    padding-right: 85px;
+}
+
+.grade {
+    padding-right: 20px;
+}
+
+.range {
+    padding-right: 50px;
+}
+
+.grade-total {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.grade-label,
+.grade-point {
+    font-family: Karla, sans-serif;
+}
+/*-----------------------------------------*/
+@media (max-width: 1440px) {
+    .main-content,
+    .header,
+    .logo,
+    .nav-list,
+    .nav-item,
+    .nav-link,
+    .course-details,
+    .course-actions,
+    .course-action,
+    .grading-link,
+    .edit-course-link,
+    .student-table-header,
+    .table-divider,
+    .student-row {
+        max-width: 100%;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .logo,
+    .nav-link {
+        white-space: initial;
+        padding: 0 20px 0 22px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .course-details,
+    .course-actions {
+        padding: 0 20px;
+    }
+
+    .course-actions {
+        margin-right: 5px;
+        flex-wrap: wrap;
+    }
+
+    .course-action,
+    .grading-link {
+        white-space: initial;
+        padding: 0 20px;
+    }
+
+    .grading-link {
+        padding: 0 24px;
+    }
+
+    .edit-course-link {
+        padding: 0 20px;
+    }
+
+    .student-table-header {
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .table-divider {
+        margin-right: 5px;
+    }
+
+    .student-row {
+        flex-wrap: wrap;
+    }
+}

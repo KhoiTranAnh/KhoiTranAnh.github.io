@@ -1,0 +1,145 @@
+* {
+  font-family: Karla, Arial;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #E4E9F7;
+  --sidebar-color: #03075c;
+  --hover-color: #09043d;
+  --text-color: #fffefe;
+  --boder-color: #fffefe;
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: -200;
+  background: var(--sidebar-color);
+  transition: left 0.3s ease-in-out;
+}
+
+.sidebar header {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.sidebar img {
+  width: 35%;
+  margin: 10px 0px;
+}
+
+.sidebar .roleuser {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: #6A91F9;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #fffefe;
+  font-size: 32px;
+}
+
+.sidebar-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.nav-link {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  border-top: 2px var(--boder-color) ridge;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-text {
+  text-decoration: none;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+/* doi mau */
+.nav-link .active {
+  background-color: var(--sidebar-color);
+}
+
+.nav-link.active:hover {
+  background-color: var(--hover-color);
+}
+
+.content {
+  position: absolute;
+  right: 0;
+  width: 75%;
+  color: black;
+  display: block;
+  margin: 20px 20px;
+}
+
+.content .styleGrade {
+  margin-top: 15px;
+  position: fixed;
+  box-sizing: border-box;
+  width: 60%;
+  background-color: #6A91F9;
+  border-radius: 20px;
+  height: 90%;
+  right: 10%;
+  overflow: scroll;
+}
+
+.detailGradeList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 80%;
+  margin: 30px;
+  border-collapse: collapse;
+  border-color: white;
+  color: white;
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+}
+
+table {
+  padding: 10px;
+}
+
+table td {
+  border-bottom: white solid 2px;
+  text-align: center;
+  height: 36px;
+  padding: 0px 10px;
+}
+
+table thead td {
+  text-align: center;
+}

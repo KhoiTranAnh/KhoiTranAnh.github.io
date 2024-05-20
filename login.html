@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Karla">
+  <link rel="stylesheet" href="./style/login.css">
+</head>
+<body>
+  <div class="topnav">
+    <img src="./img/logo-placeholder.svg" alt="" class="logo">
+    <div class="a-container">
+      <a href="./index.html">Home</a>
+    </div>
+    <div class="a-container login active">
+      <a href="#">Login</a>
+    </div>
+  </div>
+
+  <div class="welcome">
+    <p>Welcome, log into your account</p>
+  </div>
+
+  <div class="input-container">
+    <input type="email" autocomplete="off" placeholder="Enter your mail" id="email-input" required>
+    <input type="password" autocomplete="off" placeholder="Enter your password" id="password-input" required>
+    <button type="submit" id="login-button">Log in</button>
+    <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+  </div>
+  <script type="module" src="./source/login.js"></script>
+</body>
+</html>

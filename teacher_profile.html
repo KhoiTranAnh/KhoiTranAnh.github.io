@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Profile
+  </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+  <link rel="stylesheet" href="style/shared_profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <nav class="sidebar" id="sidebar">
+    <header>
+      <img src="img/logo-placeholder.svg" class="logo">
+    </header>
+    <div class="roleuser">
+      <p class="user-name" id="user-name-placeholder">User</p>
+      <p class="user-role" id="user-role-placeholder">User role</p>
+    </div>
+    <div class="menu-bar">
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('profile')">Profile</a>
+      </div>
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('timetable')">Timetable</a>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <div class="nav-link active">
+        <a href="./index.html" class="nav-text">Home</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Content -->
+  <div class="content">
+    <div class="profile container-block" id="profile">
+      <p class="title">Teacher name's Information</p>
+      <div class="body-table">
+        <table class="table-infor">
+          <div class="table1">
+            <tbody>
+              <tr>
+                <td class="pad table-menu">First name:</td>
+                <td class="pad data-user">
+                  <div class="infor-user" id="fname">User first name</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">Last name:</td>
+                <td class="pad data-user">
+                  <div class="infor-user" id="lname">User last name</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">Teacher ID:</td>
+                <td class="pad data-user">
+                  <div class="infor-user" id="teacher-id">User ID</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">Email:</td>
+                <td class="pad data-user">
+                  <div class="infor-user" id="teacher-mail">User email</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">Date of birth:</td>
+                <td class="pad data-user">
+                  <div class="infor-user" id="teacher-dob">User birthday</div>
+                </td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+      </div>
+
+      <p class="title title2">Additional Information</p>
+      <div class="body-table">
+        <table class="table-infor">
+          <div class="table1">
+            <tbody>
+              <tr>
+                <td class="pad table-menu">Academic degree:</td>
+                <td class="pad data-user">
+                  <input type="text" class="infor-user input-text" placeholder="Ex: Bachelor" id="degree-inp" autocomplete="off">
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu ">Specialize field:</td>
+                <td class="pad data-user">
+                  <input type="text" class="infor-user input-text" placeholder="Ex: Computer Science" id="field-inp" autocomplete="off">
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">Current password:</td>
+                <td class="pad data-user">
+                  <input type="password" class="infor-user input-text" placeholder="Enter current password" id="cur-password-inp" autocomplete="off">
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">New password:</td>
+                <td class="pad data-user">
+                  <input type="password" class="infor-user input-text" placeholder="Enter new password" id="password-inp" autocomplete="off">
+                </td>
+              </tr>
+              <tr>
+                <td class="pad table-menu">Confirm password</td>
+                <td class="pad data-user">
+                  <input type="password" class="infor-user input-text" placeholder="Confirm your password" autocomplete="off" id="confirm-password">
+                </td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+        <button class="update-info-btn" type="submit" id="updateBtn">Update</button>
+      </div>
+    </div>
+
+    <div class="timetable container-block hide" id="timetable">
+      <section class="body-table" style="width: 100%;">
+        <table class="style-table" style="width: 90%;">
+          <thead style="font-size: 18px">
+            <tr>
+              <th class="element" style="width:15%">Course ID</th>
+              <th class="element" style="width: 30%;">Course name</th>
+              <th class="element" style="width: 10%;">Class</th>
+              <th class="element" style="width: 15%;">Date of Week</th>
+              <th class="element" style="width: 20%;">Time</th>
+              <th class="element" style="width: 10%;">Room</th>
+            </tr>
+          </thead>
+          <tbody id="time-table">
+            <!-- <tr>
+              <td class="element">CO2039</td>
+              <td class="element">Advanced Programming</td>
+              <td class="element">L01</td>
+              <td class="element">Monday</td>
+              <td class="element">7:00 - 9:00</td>
+              <td class="element">H1-404</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- <p class="title">
+        <button id="prevWeek">
+          <img src="img/left-arrow-button.png" class="arrow-button" alt="Previous Week">
+        </button>
+        Week 17: 22/04/2024 - 28/04/2024
+        <button id="nextWeek">
+          <img src="img/right-arrow-button.png" class="arrow-button" alt="Next Week">
+        </button>
+      </p>
+      <div class="row">
+        <div class="child-block">
+          <div class="title">Mon</div>
+          <div class="subject">
+            <p class="text">- CO2039 - Advanced Programming - L05</p>
+            <p class="text">- 07:00 - 08:50</p>
+            <p class="text">- H6 - 414</p>
+          </div>
+        </div>
+        <div class="child-block">
+          <div class="title">Tue</div>
+          <div class="subject">
+            <p class="text">- Mã môn học - tên môn học - lớp</p>
+            <p class="text">- thời gian</p>
+            <p class="text">- phòng học</p>
+          </div>
+        </div>
+        <div class="child-block">
+          <div class="title">Wed</div>
+        </div>
+        <div class="child-block">
+          <div class="title">Thu</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="child-block">
+          <div class="title">Fri</div>
+        </div>
+        <div class="child-block">
+          <div class="title">Sat</div>
+        </div>
+        <div class="child-block">
+          <div class="title">Sun</div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <script>
+    function showContent(div_id) {
+      let container_blocks = document.getElementsByClassName('container-block');
+
+      for (i = 0; i < container_blocks.length; i++) {
+        if (!container_blocks[i].classList.contains('hide')) {
+          container_blocks[i].classList.add('hide');
+        }
+      }
+
+      document.getElementById(div_id).classList.remove('hide');
+    }
+
+    user_role = sessionStorage.getItem('user-role');
+    if (user_role != null) {
+      if (user_role.role == 'Students') {
+        // <!-- Add code -->
+      }
+      else if (user_role.role == 'Teachers') {
+        // <!-- Add code -->
+      }
+    }
+
+    let currentUser = JSON.parse(sessionStorage.getItem('user-info'));
+    let userRole = JSON.parse(sessionStorage.getItem('user-role')).role;
+    console.log(userRole)
+    document.getElementById('user-name-placeholder').innerText = currentUser.firstname + ' ' + currentUser.lastname;
+    document.getElementById('user-role-placeholder').innerText = userRole.substring(0, userRole.length-1);
+  </script>
+  <script type="module" src="./source/teacher_profile.js"></script>
+</body>
+
+</html>

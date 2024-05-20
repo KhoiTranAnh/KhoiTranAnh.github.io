@@ -1,0 +1,145 @@
+* {
+  font-family: Karla;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+}
+
+.topnav {
+  background-color: #00116A;
+  height: 50px;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.topnav .logo {
+  float: left;
+  height: 40px;
+  margin-right: 50px;
+  margin-left: 50px;
+  padding-top: 5px;
+  color: #823705;
+}
+
+.topnav .a-container {
+  float: right;
+  display: block;
+  background-color: transparent;
+  /* height: 50px; */
+  min-height: 50px;
+  height: max-content;
+  width: fit-content;
+  padding: 0px 25px;
+}
+
+.topnav .a-container:hover{
+  a {
+    color: black;
+  }
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.topnav a{
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 6px;
+  font-size: 32px;
+}
+
+/* Add a color to the active/current link */
+.topnav .active {
+  background-color: #00113F;
+  color: white;
+}
+
+.user-guide-container {
+  text-align: center;
+}
+
+.container {
+  display: block;
+  padding: 150px;
+}
+
+.user-guide a {
+  text-decoration: none;
+  display: block;
+  width: auto;
+  font-size: 64px;
+  font-weight: bolder;
+  padding: 10px 0px;
+  color: white;
+}
+
+.user-guide a:hover {
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.page-title{
+  padding: 50px;
+  font-size:x-large;
+  text-align: center;
+  color: white;
+}
+
+.empty-div {
+  display: block;
+  height: 150px;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  font-size: 24px;
+  color: white;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.project-info {
+  display: block;
+  text-align: center;
+  padding-left: 25px;
+}
+
+.contact-info {
+  display: block;
+  text-align: center;
+  padding-right: 25px;
+}
+
+.logout {
+  padding: 0px;
+}
+
+#logout-btn {
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 160px;
+  display: block;
+  height: 50px;
+  background-color: #00116A;
+  color: white;
+  font-family: Karla;
+  font-size: 32px;
+  border: none;
+}
+
+#logout-btn:hover {
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}

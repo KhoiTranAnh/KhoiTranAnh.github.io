@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Management System - BTL LTNC</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+  <link rel="stylesheet" href="style/ad_dboard_grade.css">
+</head>
+
+<body>
+  <nav class="sidebar" id="sidebar">
+    <header>
+      <img src="img/logo-placeholder.svg" class="logo">
+    </header>
+    <div class="roleuser">
+      <p>Admin</p>
+    </div>
+    <div class="menu-bar">
+      <div class="nav-link active">
+        <a href="./ad_dboard.html" class="nav-text" onclick="">Overall</a>
+      </div>
+      <div class="nav-link active">
+        <a href="./ad_dboard.html" class="nav-text" onclick="">Create new course</a>
+      </div>
+      <div class="nav-link active">
+        <a href="./ad_dboard.html" class="nav-text" onclick="">Create teacher account </a>
+      </div>
+      <div class="nav-link active">
+        <a href="./ad_dboard.html" class="nav-text" onclick="">Grade</a>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <div class="nav-link active">
+        <a href="./index.html" class="nav-text">Home</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Content -->
+  <div class="content" id="gradeContent">
+    <div class="styleGrade">
+      <div class="detailGradeList" id="detailGradeList">
+        <h1 id="courseName"></h1>
+        <p id="class-teacher"></p>
+        <table>
+          <thead>
+            <td id="student-name" style="width: 30%">Student name</td>
+            <td id="student-id" style="width: 20%;">Student ID</td>
+            <td id="course-class" style="width: 10%;">Class</td>
+            <td id="GPA-4.0" style="width: 20%;">
+              <p>GPA</p>
+              <p>(4.0 scale)</p>
+            </td>
+            <td id="GPA-10.0" style="width: 20%;">
+              <p>GPA</p>
+              <p>(10.0 scale)</p>
+            </td>
+          </thead>
+          <tbody id="grade-table">
+            <!-- <tr>
+              <td>Test student</td>
+              <td>2211694</td>
+              <td>L01</td>
+              <td>A</td>
+              <td>9.4</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./source/adminGrade.js"></script>
+</body>
+
+</html>

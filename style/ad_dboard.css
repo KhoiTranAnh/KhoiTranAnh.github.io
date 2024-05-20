@@ -1,0 +1,402 @@
+* {
+  font-family: Karla, Arial;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #E4E9F7;
+  --sidebar-color: #03075c;
+  --hover-color: #09043d;
+  --text-color: #fffefe;
+  --boder-color: #fffefe;
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: -200;
+  background: var(--sidebar-color);
+  transition: left 0.3s ease-in-out;
+}
+
+.sidebar header {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.sidebar img {
+  width: 35%;
+  margin: 10px 0px;
+}
+
+.sidebar .roleuser {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: #6A91F9;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #fffefe;
+  font-size: 32px;
+}
+
+.sidebar-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.nav-link {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  border-top: 2px var(--boder-color) ridge;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-text {
+  text-decoration: none;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+/* doi mau */
+.nav-link .active {
+  background-color: var(--sidebar-color);
+}
+
+.nav-link.active:hover {
+  background-color: var(--hover-color);
+}
+
+.content {
+  position: absolute;
+  right: 0;
+  width: 75%;
+  color: black;
+  display: none;
+  margin: 20px 20px;
+}
+
+.content.active {
+  display: block;
+  /* Show active content */
+}
+
+.content .styleOverall, 
+        .styleCourse, 
+        .styleCreateteacher, 
+        .styleGrade {
+  margin-top: 15px;
+  position: fixed;
+  box-sizing: border-box;
+  width: 60%;
+  background-color: #6A91F9;
+  border-radius: 20px;
+  height: 90%;
+  right: 10%;
+  overflow: scroll;
+}
+
+.content .styleOverall .overall {
+  height: 50px;
+  align-content: center;
+  text-align: center;
+  border-bottom: #ffffff 3px ridge;
+  margin-top: 10px;
+}
+
+.content .styleOverall .overall strong {
+  color: #fffefe;
+  font-size: 200%;
+}
+
+.content .styleOverall .info {
+  height: 50px;
+  width: 90%;
+  margin: 10px 10px 10px 30px;
+  padding: 10px;
+}
+
+.content .styleOverall .info p {
+  display: inline;
+  font-size: 200%;
+}
+
+.content .styleOverall .info span {
+  float: right;
+  background-color: #09043d;
+  display: inline;
+  color: #fffefe;
+  width: 50%;
+  height: 120%;
+  font-size: 170%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.content .styleCreateteacher .creatline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-bottom: #ffffff 2px ridge;
+  margin-top: 10px;
+}
+
+.content .styleCreateteacher .creatline p {
+  color: #fffefe;
+  font-size: 150%;
+}
+
+.content .styleCreateteacher .input_info {
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+  height: 40px;
+}
+
+input {
+  background-color: #362cac;
+  width: 50%;
+  border-radius: 5px;
+  color: white;
+  font-size: 100%;
+  border-style: none;
+  height: 100%;
+  text-align: center;
+}
+
+input#course-syllabus{
+  align-content: center;
+  
+}
+
+label {
+  display: inline-block;
+  width: 30%;
+}
+
+.content .styleCreateteacher .submited{
+  text-align: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  background-color: #1b1468;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 150%;
+  height: 30px;
+  width: 15%;
+}
+
+button[type="submit"]:hover {
+  background-color: #4923a9;
+}
+
+.content .styleCreateteacher .multiupload {
+  text-align: center;
+  align-content: center;
+}
+
+.content .styleCreateteacher .multiupload .file-upload {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.content .styleCreateteacher .multiupload .file-upload input[type="file"] {
+  position: absolute;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4c5f93;
+}
+
+.content .styleCreateteacher .multiupload .file-upload .upload-text {
+  display: flex;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 150%;
+}
+
+.content .styleCourse .creatCourse form {
+  padding: 15px;
+  align-content: center;
+  text-align: center;
+}
+
+.content .styleCourse .creatCourse form .input_info {
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.content .styleCourse .creatCourse form .input_info label {
+  display: inline-block;
+  width: 40%;
+}
+
+.content .styleCourse .creatCourse form .input_info label p {
+  font-size: 150%;
+}
+
+.content .styleCourse .creatline {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #ffffff 2px ridge;
+}
+
+.content .styleCourse .creatline p {
+  color: #fffefe;
+  font-size: 150%;
+}
+
+.content .styleCourse .creatCourse form .submited {
+  text-align: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+select {
+  background-color: #362cac;
+  width: 50%;
+  border-radius: 2%;
+  color: white;
+  font-size: 100%;
+  border-style: none;
+  height: 100%;
+  text-align: center;
+}
+
+.content .styleGrade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .styleGrade .listcource {
+  position: absolute;
+  top: 10px;
+}
+
+.content .styleGrade .listcource .content-item {
+  display: flex;
+  border-radius: 5px;
+  background-color: #00116a;
+  gap: 20px;
+  padding: 20px;
+  margin: 10px;
+  width: 800px;
+}
+
+.content .styleGrade .listcource .content-item .content-thumbnail {
+  border-radius: 5px;
+  background-color: #8595eb;
+  width: 80px;
+  height: 80px;
+}
+
+.content .styleGrade .listcource .content-item .content-title {
+  flex-grow: 1;
+  flex-basis: auto;
+  margin: auto 0;
+}
+
+.content .styleGrade .listcource .content-item .content-title a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 150%;
+}
+
+.content .styleGrade .listcource .content-item .content-title p {
+  font-size: 100%;
+}
+
+.content-item.show {
+  display: initial;
+}
+
+.content-item.hide {
+  display: none;
+}
+
+.detailGradeList {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 80%;
+  position: absolute;
+  top: 20px;
+  border-collapse: collapse;
+  border-color: white;
+  color: white;
+  font-size: 18px;
+}
+
+table {
+  padding: 10px;
+}
+
+table td {
+  border-bottom: white solid 2px;
+}
+
+table thead td {
+  text-align: center;
+}
+
+td#student-name {
+  width: 200px
+}
+
+td#student-id {
+  width: 100px;
+}
+
+td.student-grade {
+  width: 175px;
+}

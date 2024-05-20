@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Name - Editing</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+  <link rel="stylesheet" href="./style/share.css">
+  <link rel="stylesheet" href="./style/teacher_course_edit.css">
+</head>
+
+<body>
+  <div class="topnav">
+    <img src="./img/logo-placeholder.svg" alt="" class="logo">
+    <div class="a-container active">
+      <a href="#">Home</a>
+    </div>
+    <div class="a-container dashboard" style="display: none;">
+      <a href="./ad_dboard.html">Dashboard</a>
+    </div>
+    <div class="a-container courses" style="display: none;">
+      <a href="course.html">Courses</a>
+    </div>
+    <div class="a-container course-regis" style="display: none;">
+      <a href="./course-registration.html">Course Registration</a>
+    </div>
+
+    <div class="a-container login">
+      <a href="./login.html">Login</a>
+    </div>
+
+    <div class="a-container logout" id="logout-div" style="display: none;">
+      <a href="./login.html" id="logout" onclick="logout()">Log out</a>
+    </div>
+  </div>
+
+  <div class="course-content" id="course-content">
+    <div class="course-info" id="course-info" style="font-size: 32px;">
+      <p id="course-info"></p>
+    </div>
+
+    <div class="content-block" style="z-index: 0;">
+      <nav class="course-nav">
+        <a href="./teacher_course.html" class="course-nav-link">Course</a>
+        <a href="./teacher_grading.html" class="course-nav-link">Grading</a>
+        <a href="#" class="course-nav-link active">Edit Course</a>
+      </nav>
+
+      <section class="body-table" id="body-table">
+      </section>
+
+      <div class="new-section" id="createSectionPanel">
+        <div class="create-section-btn">
+          <button id='showSectionPanel' onclick="showCreateSectionPanel()">Create new section</button>
+        </div>
+        <div id="sectionPanel">
+          <input type="text" id="section-name-input" style="display: none; width:80%; " placeholder="Enter a name for the new section" autocomplete="off">
+          <button type="submit" id="section-name-btn" style="display: none;">Create</button>
+        </div>
+        <div class="divider"></div>
+      </div>
+
+      <div class="create-new-content" id="create-content-panel" style="display: none;">
+        <p>Create new content</p>
+        <div class="content-name-input">
+          <div class="label">
+            <p>Content name</p>
+          </div>
+          <input type="text" placeholder="Enter content name" id="name-input" class="content-input" required autocomplete="off">
+        </div>
+        <div class="content-link">
+          <div class="label">
+            <p>Link</p>
+          </div>
+          <input type="text" placeholder="Enter content name" id="link-input" class="content-input" required autocomplete="off">
+        </div>
+        <button type="button" id="go-back" onclick="goBack()">Go back</button>
+        <button type="submit" id="createContentBtn">Create</button>
+      </div>
+
+      <div class="create-new-content" id="edit-content-panel" style="display: none;">
+        <p>Edit content</p>
+        <div class="content-name-input">
+          <div class="label">
+            <p>Content name</p>
+          </div>
+          <input type="text" placeholder="" id="edit-content-name-input" class="content-input" required autocomplete="off">
+        </div>
+        <div class="content-link">
+          <div class="label">
+            <p>Link</p>
+          </div>
+          <input type="text" placeholder="" id="edit-content-link-input" class="content-input" required autocomplete="off">
+        </div>
+        <button type="button" id="go-back" onclick="goBack()">Go back</button>
+        <button type="submit" id="deleteContentBtn" onclick="" style="background-color: rgb(255, 108, 108);">Delete</button>
+        <button type="submit" id="updateContentBtn">Update</button>
+      </div>
+
+      <div class="create-new-content" id="edit-section-panel" style="display: none;">
+        <p>Edit section</p>
+        <div class="content-name-input">
+          <div class="label">
+            <p>Section name</p>
+          </div>
+          <input type="text" placeholder="" id="edit-section-name-input" class="content-input" required autocomplete="off">
+        </div>
+        
+        <button type="button" id="go-back" onclick="goBack()">Go back</button>
+        <button type="submit" id="deleteSectionBtn" onclick="" style="background-color: rgb(255, 108, 108);">Delete</button>
+        <button type="submit" id="updateSectionBtn">Update</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./source/index.js"></script>
+  <script>
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = "./login.html";
+    }
+
+    function showCreateContentPanel(currentSection) {
+      sessionStorage.setItem('currentSection', currentSection);
+      document.getElementById('createSectionPanel').style.display = 'none'
+      document.getElementById('body-table').style.display = 'none';
+      document.getElementById('create-content-panel').style.display = "block";
+    }
+
+    function showEditContentPanel(sectionIndex, contentIndex) {
+      let currentlyEdit = {
+        'sectionIndex':sectionIndex,
+        'contentIndex':contentIndex,
+        'contentName' :document.getElementById(`${sectionIndex}-${contentIndex}`).innerText,
+        'contentLink' :document.getElementById(`${sectionIndex}-${contentIndex}`).href,
+      }
+      document.getElementById('edit-content-name-input').setAttribute('placeholder', currentlyEdit.contentName);
+      document.getElementById('edit-content-link-input').setAttribute('placeholder', currentlyEdit.contentLink);
+      sessionStorage.setItem('currentSection', JSON.stringify(currentlyEdit));
+      document.getElementById('createSectionPanel').style.display = 'none'
+      document.getElementById('body-table').style.display = 'none';
+      document.getElementById('edit-content-panel').style.display = "block";
+    }
+
+    function goBack() {
+      sessionStorage.removeItem('currentSection');
+      document.getElementById('createSectionPanel').style.display = 'flex';
+      document.getElementById('body-table').style.display = 'block';
+      document.getElementById('create-content-panel').style.display = "none";
+      document.getElementById('edit-section-panel').style.display = "none";
+      document.getElementById('edit-section-panel').style.display = "none";
+      document.getElementById('edit-content-panel').style.display = "none";
+      
+    }
+
+    function showCreateSectionPanel() {
+      document.getElementById('section-name-input').style.display = 'block';
+      document.getElementById('section-name-btn').style.display = 'block';
+    }
+
+    function showEditSectionPanel(sectionIndex, sectionName) {
+      let currentlyEdit = {
+        'sectionIndex':sectionIndex,
+        'sectionName' :sectionName,
+      }
+      sessionStorage.setItem('currentSection', JSON.stringify(currentlyEdit));
+      document.getElementById('createSectionPanel').style.display = 'none'
+      document.getElementById('body-table').style.display = 'none';
+      document.getElementById('edit-section-panel').style.display = "block";
+      document.getElementById('edit-section-name-input').setAttribute('placeholder', sectionName);
+    }
+  </script>
+  <script type="module" src="./source/teacher_course_edit.js"></script>
+  <script type="module" src="./source/course-content.js"></script>
+</body>
+
+<footer>
+  <div class="footer-container">
+    <div class="project-info">
+      <p>Advanced Programming (CO2039) Assignment</p>
+      <p>Semester 232</p>
+    </div>
+    <div class="contact-info">Contact Information</div>
+  </div>
+</footer>
+
+</html>

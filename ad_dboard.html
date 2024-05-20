@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Management System - BTL LTNC</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+  <link rel="stylesheet" href="style/ad_dboard.css">
+</head>
+
+<body>
+  <nav class="sidebar" id="sidebar">
+    <header>
+      <img src="img/logo-placeholder.svg" class="logo">
+    </header>
+    <div class="roleuser">
+      <p>Admin</p>
+    </div>
+    <div class="menu-bar">
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('overall')">Overall</a>
+      </div>
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('createCourse')">Create a new course</a>
+      </div>
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('course')">Create a new class</a>
+      </div>
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('createteacher')">Create teacher account </a>
+      </div>
+      <div class="nav-link active">
+        <a href="#" class="nav-text" onclick="showContent('grade'), showGradeItem()">Grade</a>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <div class="nav-link active">
+        <a href="./index.html" class="nav-text">Home</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Content -->
+  <div class="content" id="overallContent">
+    <div class="styleOverall">
+      <!-- Overall Content -->
+      <div class="overall"><strong>Overall</strong></div>
+      <div class="info">
+        <p>Numbers of students:</p>
+        <span id="numst">Numbers of students</span>
+      </div>
+      <div class="info">
+        <p>Numbers of teachers:</p>
+        <span id="numteacher">Numbers of teachers</span>
+      </div>
+      <div class="info">
+        <p>Numbers of courses:</p>
+        <span id="numcourse" class="numcourse">Numbers of courses</span>
+      </div>
+      <div class="info">
+        <p>Numbers of classes:</p>
+        <span id="numclass" class="numclass">Numbers of classes</span>
+      </div>
+    </div>
+  </div>
+  <div class="content" id="createCourseContent">
+    <div class="styleCourse">
+      <div class="creatline">
+        <p>Create a new course</p>
+      </div>
+      <!-- Course Content -->
+      <div class="creatCourse">
+        <form id="createCourseForm">
+          <!-- CourseID -->
+          <div class="input_info">
+            <label for="newCourseId">
+              <p>Course ID:</p>
+            </label>
+            <input type="text" id="newCourseID" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="course-name">
+              <p>Course name:</p>
+            </label>
+            <input type="text" id="course-name" name="course-name" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="course-credit">
+              <p>Credits:</p>
+            </label>
+            <input type="number" id="course-credit" name="course-credit" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="course-syllabus">
+              <p>Course Syllabus Link:</p>
+            </label>
+            <input type="url" id="course-syllabus" name="course-syllabus" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <p style="font-size: 16pt; text-decoration: underline;">Evaluation form & ratio</p>
+          </div>
+          <div class="input_info">
+            <label for="activity">
+              <p>In-class activities</p>
+            </label>
+            <input type="number" id="activity" name="activity" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="labs">
+              <p>Labs</p>
+            </label>
+            <input type="number" id="labs" name="labs" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="projects-assignment">
+              <p>Projects or Assignments</p>
+            </label>
+            <input type="number" id="projects-assignment" name="projects-assignment" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="midterm">
+              <p>Midterm Exam</p>
+            </label>
+            <input type="number" id="midterm" name="midterm" required autocomplete="off">
+          </div>
+          <div class="input_info">
+            <label for="final">
+              <p>Final Exam</p>
+            </label>
+            <input type="number" id="final" name="final" required autocomplete="off">
+          </div>
+          <!-- <div class="submited">
+            <button type="submit" class="submited" id="createNewCourseBtn">Create</button>
+          </div> -->
+          <button type="submit" class="submited" id="createNewCourseBtn">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="content" id="courseContent">
+    <div class="styleCourse">
+      <div class="creatline">
+        <p>Create new class</p>
+      </div>
+      <!-- Course Content -->
+      <div class="creatCourse">
+        <form method="post">
+          <!-- CourseID -->
+          <div class="input_info">
+            <label for="courseid">
+              <p>CourseID:</p>
+            </label>
+            <select name="courseid" id="courseid"></select>
+            <!-- <input type="text" id="courseid" name="courseid" required autocomplete="off"> -->
+          </div>
+          <!-- Class -->
+          <div class="input_info">
+            <label for="class">
+              <p>Class:</p>
+            </label>
+            <input type="text" id="class" name="class" required autocomplete="off">
+          </div>
+          <!-- Assigned teacher -->
+          <div class="input_info">
+            <label for="teacher">
+              <p>Teacher:</p>
+            </label>
+            <select type="text" id="teacher" name="teacher" class="teacher" required autocomplete="off"></select>
+          </div>
+
+          <!-- Class capacity -->
+          <div class="input_info">
+            <label for="capacity">
+              <p>Capacity:</p>
+            </label>
+            <input type="number" id="capacity" name="capacity" required autocomplete="off">
+          </div>
+          <!-- Course length (weeks) -->
+          <div class="input_info">
+            <label for="course_length">
+              <p>Course length (weeks):</p>
+            </label>
+            <input type="number" id="course_length" name="course_length" required autocomplete="off">
+          </div>
+          <!-- On weekday -->
+          <div class="input_info">
+            <label for="dateOfWeek">
+              <p>On weekday:</p>
+            </label>
+            <select id="dayOfWeek" name="dayOfWeek">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+          </div>
+          <!-- Begin time -->
+          <div class="input_info">
+            <label for="time_start">
+              <p>Begin time:</p>
+            </label>
+            <input type="time" id="time_start" name="time_start" required autocomplete="off">
+          </div>
+          <!-- End time -->
+          <div class="input_info">
+            <label for="time_end">
+              <p>End time:</p>
+            </label>
+            <input type="time" id="time_end" name="time_end" required autocomplete="off">
+          </div>
+          <!-- Room -->
+          <div class="input_info">
+            <label for="room">
+              <p>Room:</p>
+            </label>
+            <input type="text" id="room" name="room" required>
+          </div>
+          <div class="submited">
+            <button type="submit" class="submited" id="createCourseBtn">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="content" id="createteacherContent">
+    <div class="styleCreateteacher">
+      <!-- Createteacher item -->
+      <form id="createTeacherAccountForm">
+        <div class="creatline">
+          <p>Create teacher account</p>
+        </div>
+        <div class="input_info">
+          <label for="fnameteacher">
+            <p>First name:</p>
+          </label>
+          <input type="text" name="First name" id="fnameteacher" required autocomplete="off">
+        </div>
+        <div class="input_info">
+          <label for="lnameteacher">
+            <p>Last name:</p>
+          </label>
+          <input type="text" name="Last name" id="lnameteacher" required autocomplete="off">
+        </div>
+        <div class="input_info">
+          <label for="emailteacher">
+            <p>Email:</p>
+          </label>
+          <input type="text" name="Email" id="emailteacher" required autocomplete="off">
+        </div>
+        <div class="input_info">
+          <label for="datebirth">
+            <p>Date of birth:</p>
+          </label>
+          <input type="date" name="Date of birth" id="datebirth" required autocomplete="off">
+        </div>
+        <div class="input_info">
+          <button class="submited" type="submit" id="createTeacherAccount">Create</button>
+        </div>
+        <!-- <div class="submited"><input type="submit" value="Create"></div> -->
+      </form>
+    </div>
+  </div>
+  <div class="content" id="gradeContent">
+    <div class="styleGrade">
+      <!-- Grade Content -->
+      <div class="listcource">
+        <div id="content-container"></div>
+      </div>
+
+      <div class="detailGradeList" id="detailGradeList" style="display: none;">
+        <h1 id="courseName"></h1>
+        <p id="class-teacher"></p>
+        <table>
+          <thead>
+            <td id="student-name">Tên sinh viên</td>
+            <td id="student-id">MSSV</td>
+            <td class="student-grade">Điểm trung bình (thang 4.0)</td>
+            <td class="student-grade">Điểm trung bình (thang 10.0)</td>
+          </thead>
+        </table>
+        <button id="exportCSV">Export file .csv</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Function to show the corresponding content and hide others
+    function showContent(contentId) {
+      // Hide all content
+      var contents = document.querySelectorAll('.content');
+      contents.forEach(function (content) {
+        content.classList.remove('active');
+      });
+
+      // Show the selected content
+      document.getElementById(contentId + 'Content').classList.add('active');
+    }
+
+    function hideGradeItem() {
+      document.querySelectorAll(".content-item").forEach(function (content) {
+        content.setAttribute('style', "display: none");
+      })
+      document.getElementById('detailGradeList').removeAttribute('style');
+      document.getElementById('detailGradeList').setAttribute('style', 'display:flex');
+    }
+
+    function showGradeItem() {
+      document.querySelectorAll(".content-item").forEach(function (content) {
+        content.setAttribute('style', "display: flex");
+      })
+      document.getElementById('detailGradeList').removeAttribute('style');
+      document.getElementById('detailGradeList').setAttribute('style', 'display:none');
+    }
+
+    function saveCurrentCourse(courseID){
+      sessionStorage.setItem('currentCourseID', courseID);
+    }
+  </script>
+  <script type="module" src="./source/teacherSelect.js"></script>
+  <script type="module" src="./source/createNewClass.js"></script>
+  <script type="module" src="./source/createTeacherAccount.js"></script>
+  <script type="module" src="./source/adminOverall.js"></script>
+  <script type="module" src="./source/adminGrade.js"></script>
+  <script type="module" src="./source/createNewCourse.js"></script>
+</body>
+
+</html>

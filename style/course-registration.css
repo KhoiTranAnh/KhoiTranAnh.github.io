@@ -1,0 +1,350 @@
+* {
+  font-family: Karla;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+}
+
+.topnav {
+  background-color: #00116A;
+  height: 50px;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.topnav .logo {
+  float: left;
+  height: 40px;
+  margin-right: 50px;
+  margin-left: 50px;
+  padding-top: 5px;
+  color: #823705;
+}
+
+.topnav .course {
+  width: 200px;
+  height: 100px;
+  left: 545px;
+}
+
+
+.topnav .a-container:hover {
+  a {
+    color: black;
+  }
+
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.topnav a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 6px;
+  font-size: 32px;
+}
+
+/* Add a color to the active/current link */
+.topnav .active {
+  background-color: #00113F;
+  color: white;
+}
+
+.course-student {
+  padding-top: 25px;
+  font-size: 24px;
+  height: calc(90vh - 50px);
+  line-height: 37.41px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+
+.content-container {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 95%;
+  width: 90vw;
+  margin: auto;
+  background-color: #6A91F9;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.menu-button {
+  background-color: #00116A;
+  height: 50px;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.a-container {
+  float: left;
+  display: block;
+  background-color: transparent;
+  height: 50px;
+  width: max-content;
+  padding: 0px 25px;
+  margin: 0px;
+}
+
+.a-container:hover {
+  a {
+    color: black;
+  }
+
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.a-container active {
+  background-color: #00113F;
+  color: white;
+}
+
+/*Phần footer*/
+.footer-container {
+  display: flex;
+  height: 10vh;
+  font-size: 24px;
+  color: white;
+  justify-content: space-between;
+}
+
+.project-info {
+  display: block;
+  text-align: center;
+  padding-left: 25px;
+}
+
+.contact-info {
+  display: block;
+  text-align: center;
+  padding-right: 25px;
+}
+
+/*Hết phần footer*/
+
+.course-student .content-container .header-table .course-nav {
+  align-self: center;
+  display: flex;
+  width: 540px;
+  height: 50px;
+  margin: auto;
+  gap: 30px;
+  align-items: center;
+  font-size: 32px;
+  justify-content: center;
+}
+
+.course-student .content-container .header-table .course-nav button {
+  font-family: Karla;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: #00116a;
+  color: #fff;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 250px;
+  height: 50px;
+}
+
+.course-student .content-container .header-table .course-nav button:hover {
+  color: black;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.course-student .content-container .header-table .course-nav .active {
+  background-color: #00116a;
+  color: white;
+  text-decoration: none;
+}
+
+.course-student .content-container .hide {
+  display: none;
+}
+
+.course-student .result {
+  margin-top: 30px;
+  width: 100%;
+}
+
+
+.course-student .content-container .container {
+  width: 100%;
+}
+
+#dynamic-table {
+  margin: 0 auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+#dynamic-table th,
+#dynamic-table td {
+  border-bottom: 3px solid #ffffff;
+  text-align: center;
+  padding: 0px 5px;
+}
+
+#dynamic-table .courseid {
+  width: 15%;
+}
+
+#dynamic-table .class {
+  width: 7%;
+}
+
+#dynamic-table .coursename {
+  width: 33%; 
+}
+
+#dynamic-table .schedule {
+  width: 30%;
+}
+
+#dynamic-table .room {
+  width: 15%;
+}
+
+
+#searchInput {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #0B53A8;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  text-align: center;
+  align-content: center;
+  font-size: 100%;
+  margin-top: 30px;
+}
+
+#courseTable {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 75%;
+}
+
+#courseTable .checkres {
+  border-bottom: 3px solid #ffffff;
+  text-align: center;
+  padding: 10px;
+  width: 10%;
+}
+
+#courseTable .cl {
+  border-bottom: 3px solid #ffffff;
+  text-align: center;
+  width: 5%;
+  padding: 10px;
+}
+
+#courseTable .sch {
+  border-bottom: 3px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  width: 60%;
+}
+
+#courseTable .roo {
+  border-bottom: 3px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  width: 10%;
+}
+
+#courseTable .clcap {
+  border-bottom: 3px solid #ffffff;
+  padding: 10px;
+  text-align: center;
+  width: 15%;
+}
+
+#courseTable td {
+  border-bottom: 3px solid #ffffff;
+  text-align: center;
+  align-self: center;
+  font-size: 100%;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+.resultseach {
+  text-align: center;
+  align-content: center;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#registration {
+  height: 150vh;
+  position: relative;
+}
+
+#registration .footdiv {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #00113F;
+  height: 40px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+#registration .footdiv p {
+  display: block;
+  width: fit-content;
+  position: relative;
+}
+
+#registration .footdiv .custom-submit {
+  /* display: inline; */
+  /* float: right; */
+  position: absolute;
+  right: 15px;
+  padding: 0px 10px;
+  background-color: #6A91F9;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+  font-size: 90%;
+  transition: background-color 0.3s ease;
+}
+
+#registration .footdiv .custom-submit:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+#selected-class {
+  padding-left: 10px;
+}

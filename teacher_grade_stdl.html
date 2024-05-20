@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/tc_grd_std.css">
+    <link rel="stylesheet" href="style/share.css">
+    <title>Teacher Grading Student List</title>
+</head>
+<body>
+  <div class="page-container">
+    <div class="main-content">
+      <img src="img/background.jpg" alt="" />
+      <!---------------Header---------------->
+      <header class="header">
+        <div class="logo">LOGO</div>
+        <nav class="nav-container">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">User name</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!------------------Label------------------>
+      <h1 class="course-title">Course Name - Teacher name - Class</h1>
+      <!------------------Content------------------>
+      <div class="course-content">
+        <nav class="course-nav">
+          <a href="teacher_course.html" class="course-nav-link active">Course</a>
+              <a href="teacher_grade_stdl.html" class="course-nav-link">Grading</a>
+              <a href="teacher_course_edit.html" class="course-nav-link">Edit Course</a>
+        </nav>
+        <!-----------Student list--------------->
+        <div class="student-content" id="student-tab">
+          <div class="student-table-header">
+            <div class="student-id-header">Student ID</div>
+            <div class="first-name-header">First name</div>
+            <div class="last-name-header">Last name</div>
+            <div class="grade-header">Overall Grade</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="student-row">
+            <div class="student-id">
+              <a href="#" class="Id-selcet" id="id-select">0000001</a>
+            </div>
+            <div class="first-name">Nguyễn</div>
+            <div class="last-name">Văn A</div>
+            <div class="student-grade">Not found</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="student-row">
+            <div class="student-id">
+              <a href="#" class="Id-selcet" id="id-select">0000002</a>
+            </div>
+            <div class="first-name">Trần</div>
+            <div class="last-name">Thanh B</div>
+            <div class="student-grade">8.25</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="student-row">
+            <div class="student-id">
+              <a href="#" class="Id-selcet" id="id-select">0000003</a>
+            </div>
+            <div class="first-name">Bùi</div>
+            <div class="last-name">Thị C</div>
+            <div class="student-grade">13</div>
+          </div>
+        </div>
+        <!-----------Grade--------------->
+        <div class="grade-content" id="grade-tab">
+          <div class="student-info">
+            <p class="student-Id">0000001</p>
+            <p>-</p>
+            <p class="student-Name">Nguyễn Văn A</p>
+            <p>-</p>
+            <p class="label">Grade report</p>
+          </div>
+          <div class="grade-table-header">
+            <div class="grade-item-header">Grade item</div>
+            <div class="calculated-weight-header">Calculated weight</div>
+            <div class="grade-header">Grade</div>
+            <div class="range-header">Range</div>
+            <div class="percentage-header">Percentage</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="grade-row">
+              <div class="grade-item">Quiz</div>
+              <div class="calculated-weight">10%</div>
+              <div class="grade">10</div>
+              <div class="range">0 - 10</div>
+              <div class="percentage">100%</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="grade-row">
+              <div class="grade-item">Assignment</div>
+              <div class="calculated-weight">25%</div>
+              <div class="grade">8</div>
+              <div class="range">0 - 10</div>
+              <div class="percentage">80%</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="grade-row">
+              <div class="grade-item">Midterm</div>
+              <div class="calculated-weight">25%</div>
+              <div class="grade">8.5</div>
+              <div class="range">0 - 10</div>
+              <div class="percentage">85%</div>
+          </div>
+          <hr class="table-divider" />
+          <div class="grade-row">
+              <div class="grade-item">Final</div>
+              <div class="calculated-weight">40%</div>
+              <div class="grade">8</div>
+              <div class="range">0 - 10</div>
+              <div class="percentage">80%</div>
+          </div>
+          <div class="grade-total">
+              <p class="grade-label">Course total:</p>
+              <p class="grade-point">8.25</p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</body>
+<script>
+  // Lấy phần tử
+  var button = document.getElementById("id-select");
+  var student = document.getElementById("student-tab");
+  var grade = document.getElementById("grade-tab");
+  
+  // Khi người dùng click vào button, hiển thị grade
+  button.onclick = function() {
+      grade.style.display = "block";
+      student.style.display = "none";
+  }
+</script>
+</html>

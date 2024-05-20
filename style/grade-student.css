@@ -1,0 +1,42 @@
+* {
+  font-family: Karla;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+table {
+  width: 950px;
+  height: 303px;
+  top: 350px;
+  left: 245px;
+  margin-top: 55px; /*tạo khoảng cách giữa bảng và phần tử ở trên*/
+  border-collapse: collapse;
+}
+th,
+td {
+  border-bottom: 3px solid white; /* Đặt viền dưới cho các ô */
+  padding: 8px; /* Khoảng cách giữa nội dung và viền */
+}
+td.no-border {
+  border-bottom: none;
+}
+.style-table {
+  font-size: 24px;
+  line-height: 28.06px;
+  font-weight: 700px;
+  text-align: center;
+}
+.course-total {
+  font-size: 28px;
+  text-align: center;
+  padding: 30px;
+}
+
+.name-table {
+  margin-bottom: 25px;
+}
+
+.input-container {
+  overflow: scroll;
+  height: fit-content;
+}
